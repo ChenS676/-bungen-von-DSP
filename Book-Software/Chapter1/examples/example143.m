@@ -18,7 +18,7 @@ randn('seed',0);
 randn('seed',100);
 [X1,y1]=generate_gauss_classes(m,S,P,N);
 
-% 1. Compute the ML estimates of the mean values and covariance matrix (common to all three
+%% 1. Compute the ML estimates of the mean values and covariance matrix (common to all three
 % classes) using function Gaussian_ML_estimate
 class1_data=X(:,find(y==1));
 [m1_hat, S1_hat]=Gaussian_ML_estimate(class1_data);
@@ -29,7 +29,7 @@ class3_data=X(:,find(y==3));
 S_hat=(1/3)*(S1_hat+S2_hat+S3_hat);
 m_hat=[m1_hat m2_hat m3_hat];
 
-% 2. Employ the Euclidean distance classifier, using the ML estimates of the means, in order to
+%% 2. Employ the Euclidean distance classifier, using the ML estimates of the means, in order to
 % classify the data vectors of X1
 z_euclidean=euclidean_classifier(m_hat,X1);
 
